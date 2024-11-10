@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # personal-website
 =======
 # vCard - Personal portfolio
