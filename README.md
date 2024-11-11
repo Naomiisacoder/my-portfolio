@@ -1,4 +1,3 @@
-# personal-website
 ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
 
 ## Documentation about this project. 
@@ -24,28 +23,43 @@ FROM nginx:alpine
 COPY . /usr/share/nginx/html
 EXPOSE 80
 ```
-#### NOTE: A Dockerfile is needed to package your application so it can run consistently anywhere.
+## NOTE: A Dockerfile is needed to package your application so it can run consistently anywhere.
 <br>
 b. Testing Locally: I built and ran the Docker image locally to make sure everything works before deploying following the steps below:
 
 ### Bash
 ```bash
 docker build -t portfolio-site .
-docker run -p 8080:80 portfolio-site  # For NGINX
-docker run -p 8080:8080 portfolio-site  # For Flask
+docker run -p 8081:80 portfolio-site  # For NGINX
 ```
 
-
-
-
 ### Step 3: GitHub Pages
+a. I pushed my Code from the VS code to the main branch after making all my changes:
 
+# Bash
+```bash
+git add .
+git commit -m "Deploying portfolio site"
+git push -u origin main --force
+```
+b. Afterwards, I enabled GitHub Pages to serve your static files on GitHub:
+* On my repository on GitHub.
+* I navigated to Settings > Pages.
+* Under Source, selected the branch (main) and folder (/ (root)) where my static files are located.
+* Saved the settings, and GitHub Pages generated a URL for my website.
 
 ### Step 4: Challenges I encountered.
 
+* I encountered issues when pushing to GitHub and using the parameter --force worked the magic for me. That is:
+```bash
+git push -u origin main --force
+```
 
+* I encountered error: remote origin already exists. I resolved it by using this:
 
-vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
+```bash
+git remote set-url
+```
 
 ## Demo
 
@@ -53,28 +67,6 @@ vCard is a fully responsive personal portfolio website, responsive for all devic
 
 ![image](https://github.com/user-attachments/assets/830183f9-8cf9-464c-bfa1-46291035aea7)
 
-
-## Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
-
-## Installing vCard
-
-To install **vCard**, follow these steps:
-
-Linux and macOS:
-
-```bash
-sudo git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
-```
-
-Windows:
-
-```bash
-git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
-```
 
 ## Contact
 
