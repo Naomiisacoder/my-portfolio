@@ -3,16 +3,45 @@
 
 ## Documentation about this project. 
 
-### Step 1: How I built my Docker image
+### Step 1: Setting Up Project Repository on GitHub
+a. Created a New Repository on GitHub and named it personal-website <br>
+b. Clone the repository to my local machine 
+```bash
+git clone https://github.com/your-username/portfolio-website.git
+cd portfolio-website
+```
+<br>
 
-1. I cloned the static website Repository using my VS code: git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
-2. I customized the website to my taste
+### Step 2: How I built my Docker image <br>
+a. I made use of NGINX for this Static website:
+# nginx:alpine (a lightweight web server) to serve this static files.
+
+### Dockerfile
+
+```bash
+# Use a lightweight web server to serve static files
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+EXPOSE 80
+```
+#### NOTE: A Dockerfile is needed to package your application so it can run consistently anywhere.
+<br>
+b. Testing Locally: I built and ran the Docker image locally to make sure everything works before deploying following the steps below:
+
+### Bash
+```bash
+docker build -t portfolio-site .
+docker run -p 8080:80 portfolio-site  # For NGINX
+docker run -p 8080:8080 portfolio-site  # For Flask
+```
 
 
-### Step 2: GitHub Pages
 
 
-### Step 3: Challenges I encountered.
+### Step 3: GitHub Pages
+
+
+### Step 4: Challenges I encountered.
 
 
 
