@@ -36,7 +36,7 @@ docker run -p 8081:80 portfolio-site  # For NGINX
 ### Step 3: GitHub Pages
 a. I pushed my Code from the VS code to the main branch after making all my changes:
 
-# Bash
+### Bash
 ```bash
 git add .
 git commit -m "Deploying portfolio site"
